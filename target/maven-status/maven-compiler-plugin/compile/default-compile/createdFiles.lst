@@ -1,0 +1,15 @@
+allumettes/StrategieExperte.class
+allumettes/CoupInvalideException.class
+allumettes/OperationInterditeException.class
+allumettes/Jouer.class
+allumettes/Arbitre.class
+allumettes/JeuProcurration.class
+allumettes/Strategie.class
+allumettes/StrategieTriche.class
+allumettes/StrategieHumaine.class
+allumettes/Jeu.class
+allumettes/Joueur.class
+allumettes/JeuClassique.class
+allumettes/ConfigurationException.class
+allumettes/StrategieRapide.class
+allumettes/StrategieNaif.class
