@@ -31,7 +31,7 @@
 
     <build>
         <plugins>
-            <!-- Plugin de compilation récent -->
+            <!-- Plugin de compilation  -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
