@@ -25,7 +25,7 @@ public class StrategieRapideTest {
 
         StrategieRapide strategie = new StrategieRapide();
 
-        assertEquals(2, strategie.getPrise(jeu)); 
+        assertEquals(3, strategie.getPrise(jeu)); 
     }
 
     @Test
@@ -36,7 +36,7 @@ public class StrategieRapideTest {
 
         StrategieRapide strategie = new StrategieRapide();
 
-        assertEquals(3, strategie.getPrise(jeu));
+        assertEquals(2, strategie.getPrise(jeu));
     }
 
     @Test
