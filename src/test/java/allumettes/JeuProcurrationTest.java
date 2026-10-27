@@ -9,8 +9,8 @@ class JeuProcurrationTest {
 
     @Test
     void donneLeNombreDAllumettesDuVraiJeu() {
-        Jeu vrai = new JeuClassique(7);
-        assertEquals(7, new JeuProcurration(vrai).getNombreAllumettes());
+        Jeu vrai = new JeuClassique(5);
+        assertEquals(5, new JeuProcurration(vrai).getNombreAllumettes());
     }
 
     @Test
