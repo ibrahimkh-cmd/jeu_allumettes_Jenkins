@@ -355,7 +355,7 @@ post {
 | Token vs mot de passe | Token d'accès révocable avec des droits limités, plutôt que le mot de passe du compte |
 | Jenkins non-root | Jenkins tourne avec l'utilisateur `jenkins` ; l'accès Docker est donné par `--group-add` (**principe du moindre privilège**) plutôt que `-u root` |
 | Image applicative non-root | L'application tourne avec l'utilisateur `app` dans le conteneur |
-| ⚠️ Socket Docker monté | Donner accès au socket Docker équivaut à un accès root sur l'hôte. Acceptable pour un lab local, **pas en production** (voir améliorations) |
+|  Socket Docker monté | Donner accès au socket Docker équivaut à un accès root sur l'hôte. Acceptable pour un lab local, **pas en production** (voir améliorations) |
 
 ---
 
