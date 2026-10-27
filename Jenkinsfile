@@ -8,7 +8,7 @@ pipeline {
     }
     stages {
         stage('Build') {
-            steps { sh 'mvn -B compile' }
+            steps { sh 'mvn -B clean compile' }
         }
         stage('Test') {
             steps { sh 'mvn -B test' }
@@ -22,6 +22,22 @@ pipeline {
         }
         stage('Smoke Test') {
             steps { sh 'docker run --rm jeu-allumettes:${BUILD_NUMBER} A@expert B@rapide' }
+        }
+        stage('Push') {
+            steps {
+                    withCredentials([usernamePassword(credentialsId: 'dockerhub',
+                                                    usernameVariable: 'DOCKER_USER',
+                                                    passwordVariable: 'DOCKER_PASS')]) {
+                    sh '''
+                        echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
+                        docker tag jeu-allumettes:$BUILD_NUMBER $DOCKER_USER/jeu-allumettes:$BUILD_NUMBER
+                        docker tag jeu-allumettes:$BUILD_NUMBER $DOCKER_USER/jeu-allumettes:latest
+                        docker push $DOCKER_USER/jeu-allumettes:$BUILD_NUMBER
+                        docker push $DOCKER_USER/jeu-allumettes:latest
+                        docker logout
+                    '''
+                }
+            }
         }
     }
     post {
