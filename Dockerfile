@@ -6,7 +6,7 @@ RUN addgroup -S app && adduser -S app -G app
 
 WORKDIR /app
 
-# Copier le fichier .jar compilé depuis la machine hôte(DAns mon cas c le conteneur jenkins-test) vers le conteneur
+# Copier le fichier .jar compilé depuis la machine hôte(DAns mon cas c le conteneur jenkins) vers le conteneur
 COPY target/*.jar app.jar
 
 # Basculer sur l'utilisateur non-root pour exécuter l'application en toute sécurité
