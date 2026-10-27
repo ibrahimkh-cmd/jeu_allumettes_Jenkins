@@ -362,12 +362,7 @@ post {
 ## Limites et améliorations
 
 - **Webhook GitHub** au lieu du polling, avec un Jenkins exposé (ou via un tunnel).
-- **Agents de build dédiés** : le contrôleur Jenkins ne devrait pas exécuter de builds ; les builds tourneraient sur des agents jetables (VM ou conteneurs).
-- **Builds d'images sans daemon** (Kaniko, Buildah, BuildKit rootless) pour supprimer le montage du socket Docker.
-- **Dockerfile multi-stage** (build Maven + runtime JRE) pour que l'image soit reproductible indépendamment de la CI.
-- **Passer le projet en Java 21** (`maven.compiler.release`) pour supprimer les warnings de compilation Java 8.
-- **Analyse statique** (Checkstyle, SpotBugs) et **couverture de tests** (JaCoCo) dans le pipeline.
-- **BuildKit / buildx** à la place du builder Docker legacy (déprécié).
+
 - **Migration vers GitLab CI** : même pipeline réécrit en `.gitlab-ci.yml` (projet séparé).
 
 ---
