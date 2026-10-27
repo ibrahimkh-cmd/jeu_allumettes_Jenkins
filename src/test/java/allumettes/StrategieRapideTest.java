@@ -18,6 +18,7 @@ public class StrategieRapideTest {
         joueur = new Joueur("joueurRapide", strat);
         allumRes = jeu.getNombreAllumettes();
     }
+    
     @Test
     public void testGetPrise1() {
 
