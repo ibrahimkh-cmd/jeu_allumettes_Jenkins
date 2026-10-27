@@ -1,52 +1,27 @@
 package allumettes;
-import org.junit.Test;
-import static org.junit.Assert.*;
 
-public class StrategieRapideTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-    public final static double EPSILON = 0.001;
+import org.junit.jupiter.api.Test;
 
-    private Jeu jeu;
-    private Strategie strat;
-    private Joueur joueur;
-    private int allumRes;
+class StrategieRapideTest {
 
+    private final Strategie strategie = new StrategieRapide();
 
-    public void setUp() {
-        jeu = new JeuProcurration(jeu);
-        strat = new StrategieRapide();
-        joueur = new Joueur("joueurRapide", strat);
-        allumRes = jeu.getNombreAllumettes();
-    }
-    
     @Test
-    public void testGetPrise1() {
-
-        Jeu jeu = new JeuClassique();
-
-        StrategieRapide strategie = new StrategieRapide();
-
-        assertEquals(3, strategie.getPrise(jeu)); 
+    void prendLeMaximumQuandIlEnResteAssez() {
+        assertEquals(Jeu.PRISE_MAX, strategie.getPrise(new JeuClassique()));
     }
 
     @Test
-    public void testGetPrise2() throws CoupInvalideException {
+    void prendCeQuiResteQuandIlEnResteMoinsQueLeMax() throws CoupInvalideException {
         Jeu jeu = new JeuClassique(5);
-
         jeu.retirer(Jeu.PRISE_MAX);
-
-        StrategieRapide strategie = new StrategieRapide();
-
         assertEquals(2, strategie.getPrise(jeu));
     }
 
     @Test
-    public void testGetPrise3() {
-        Jeu jeu = new JeuClassique(1);
-
-        StrategieRapide strategie = new StrategieRapide();
-
-        assertEquals(1, strategie.getPrise(jeu));
+    void prendLaDerniereAllumette() {
+        assertEquals(1, strategie.getPrise(new JeuClassique(1)));
     }
-
 }
