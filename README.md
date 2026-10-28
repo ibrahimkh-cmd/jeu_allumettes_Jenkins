@@ -1,5 +1,7 @@
 #  Jeu des allumettes — Pipeline CI/CD Jenkins
 
+  > ➡️ Suite du projet : migration de ce pipeline vers GitLab CI — [jeu_allumettes_migrationgitlabci](https://gitlab.com/ibrahimcompany-group/jeu_allumettes_migrationgitlabci)
+
 Pipeline **CI/CD complet avec Jenkins** pour une application Java (Maven) : à chaque `git push`, le code est compilé, testé (92 tests JUnit 5), packagé en `.jar`, conteneurisé avec Docker, vérifié par un smoke test, puis publié sur **Docker Hub** — sans aucune action manuelle.
 
 L'application est le **jeu des 13 allumettes** (projet Java réalisé à l'ENSEEIHT) : deux joueurs retirent à tour de rôle 1 à 3 allumettes, celui qui prend la dernière perd.
